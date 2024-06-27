@@ -1,12 +1,13 @@
 import pandas as pd
 import webbrowser
 
+
 class EnlaceExcel:
     def __init__(self, archivo_excel, nombre_columna):
         self.archivo_excel = archivo_excel
         self.nombre_columna = nombre_columna
         self.enlaces = []
-        
+
         self.leer_excel()
         self.abrir_enlaces()
 
@@ -17,7 +18,9 @@ class EnlaceExcel:
                 self.enlaces = df[self.nombre_columna].dropna().tolist()
                 print(self.enlaces)
             else:
-                print(f"La columna '{self.nombre_columna}' no se encuentra en el archivo Excel.")
+                print(
+                    f"La columna '{self.nombre_columna}' no se encuentra en el archivo Excel."
+                )
         except Exception as e:
             print(f"Error de lectura del archivo: {e}")
 
@@ -27,13 +30,28 @@ class EnlaceExcel:
 
 
 class MenuSeleccion:
-    def __init__(self, numSalon):
-        self.salones=salones
+    def __init__(self, archivo_excel):
+        self.archivo_excel = archivo_excel
+        enlace_excel = self.ingresar_salon(self.archivo_excel)
+
+    def ingresar_salon(self, archivo_excel):
+        salonTemp = input("Num salon: ")
+        # AQUI ENTRARIA UNA CONDICIONAL DE CONTROL DE INGRESO DE TEXTO
+
+        return EnlaceExcel(archivo_excel, self.conc_String(salonTemp))
+
+    def conc_String(self, salon):
+        return "SP_" + salon
 
 
 #  ASIGNACION DE VARIABLES DE DIRECCION Y ELECCION
-archivo_excel = 'enlaces.xlsx'
-nombre_columna = 'SP_01'
+archivo_excel = "enlaces.xlsx"
+nombre_columna = "SP_01"
 
-enlace_excel = EnlaceExcel(archivo_excel, nombre_columna)
+menuSeleccion = MenuSeleccion(archivo_excel)
 
+# enlace_excel = EnlaceExcel(archivo_excel, nombre_columna)
+
+
+# salonTemp = "01"
+# print("SP_" + salonTemp)
