@@ -45,12 +45,14 @@ class MenuSeleccion:
 
 
 #  ASIGNACION DE VARIABLES DE DIRECCION Y ELECCION
-archivo_excel = "enlaces.xlsx"
+archivo_excel1 = "enlaces.xlsx"
+#archivo_excel2 = "InformeTemasDesarrollados.xlsx"
 nombre_columna = "SP_01"
+#nombre_columna = "INFORMES"
 
-menuSeleccion = MenuSeleccion(archivo_excel)
+menuSeleccion = MenuSeleccion(archivo_excel1)
 
-# enlace_excel = EnlaceExcel(archivo_excel, nombre_columna)
+#enlace_excel = EnlaceExcel(archivo_excel2, nombre_columna)
 
 
 # salonTemp = "01"
