@@ -16,7 +16,7 @@ class EnlaceExcel:
             df = pd.read_excel(self.archivo_excel, sheet_name=0)
             if self.nombre_columna in df.columns:
                 self.enlaces = df[self.nombre_columna].dropna().tolist()
-                print(self.enlaces)
+                #print(self.enlaces)
             else:
                 print(
                     f"La columna '{self.nombre_columna}' no se encuentra en el archivo Excel."
@@ -46,9 +46,9 @@ class MenuSeleccion:
 
 #  ASIGNACION DE VARIABLES DE DIRECCION Y ELECCION
 archivo_excel1 = "enlaces.xlsx"
-#archivo_excel2 = "InformeTemasDesarrollados.xlsx"
+archivo_excel2 = "InformeTemasDesarrollados.xlsx"
 nombre_columna = "SP_01"
-#nombre_columna = "INFORMES"
+nombre_columna = "INFORMES"
 
 menuSeleccion = MenuSeleccion(archivo_excel1)
 
