@@ -9,3 +9,4 @@ try:
         time.sleep(0.1)
 except KeyboardInterrupt:
     print("\Coordinates copied to clipboard")
+    
